@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+
+        header {
+            background: #6200ea;
+            padding: 20px 0;
+        }
+
+        header ul {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        header ul li {
+            padding: 10px 20px;
+            margin: 0 10px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        header ul li:hover {
+            background: #3700b3;
+            border-radius: 5px;
+        }
+
+        article {
+            text-align: center;
+            display: block;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: #6200ea;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        aside h2 {
+            color: #6200ea;
+        }
+
+        form input[type="search"] {
+            border: 2px solid #6200ea;
+            border-radius: 5px;
+            width: calc(100% - 140px);
+            max-width: 400px;
+            margin-right: 10px;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        form input:focus-visible {
+            border: 2px solid #c6b7db;
+            outline: none;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background: #6200ea;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #3700b3;
+        }
+
+        details summary {
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background: #6200ea;
+            color: #fff;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            transition: background 0.3s;
+        }
+
+        details summary:hover {
+            background: #3700b3;
+        }
+
+        details ul,
+        details ol {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        ol {
+            padding-left: 0;
+        }
+
+        ol>ul {
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #6200ea;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            background-color: yellow;
+            transition: background-color 3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>الرئيسية</li>
+            <li>الاسئلة المتكررة</li>
+            <li>تعرف على الموقع</li>
+        </ul>
+    </header>
+
+    <article>
+        <h1>هذا الموقع يساعدك في العثور على ما تريده داخل نوى نحو دكتور , محلات , مطاعم ... إلى آخره</h1>
+        <section>
+            <aside>
+                <h2>عدد زيارات الموقع</h2>
+                <p id="visitor-count"></p>
+            </aside>
+            <form onsubmit="searchItems(event)">
+                <input type="search" name="search" id="search" placeholder="ابحث عن ما تريد">
+                <button type="submit" aria-label="بحث">بحث</button>
+            </form>
+        </section>
+        <br>
+        <hr>
+        <hr>
+        <br>
+        <!-- عيادات ومراكز ومستشفيات -->
+        <section>
+            <details>
+                <summary>العيادات والمراكز والمستشفيات</summary>
+                <b>هذه العيادات والمراكز والمستشفيات داخل نوى فقط **</b>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>نساء - باطنة - أطفال</b></li>
+                    </ul>
+                    <li>دكتور سمية عبدالعال مرعي
+                        <a href="#">01092150826</a>
+                    </li>
+                    <li>دكتورة ايمان عماره
+                        <a href="#">01146171300</a>
+                    </li>
+                </ol>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>مراكز</b></li>
+                    </ul>
+                    <li>مركز بداية لعلاج السمنة والنحافة والتغذية العلاجية
+                        <a href="#">01014337781</a> --
+                        <a href="#">01007756524</a>
+                    </li>
+                </ol>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>جراحة العظام والعمود الفقري</b></li>
+                    </ul>
+                    <li>دكتور مصطفى سلامة
+                        الكشف بالآشعة الديجيتال
+                        <a href="#">01011790053</a> --
+                        <a href="#">0246170695</a>
+                    </li>
+                    <li>دكتور محمد يسري فقرات
+                        <a href="#">01001689392</a>
+                    </li>
+                </ol>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>صدر</b></li>
+                    </ul>
+                    <li>دكتورة شيري مجدي
+                        <a href="#">01282149292</a> --
+                        <a href="#">0246170695</a>
+                    </li>
+                    <li>دكتور محمد يسري فقرات
+                        <a href="#">01001689392</a>
+                    </li>
+                </ol>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>اسنان</b></li>
+                    </ul>
+                    <li>دكتور عبدالرحمن مسعد
+                        <a href="#">01068144979</a>
+                    </li>
+                    <li>دكتور محمود خليفة
+                        <a href="#">01007826337</a>
+                    </li>
+                    <li>دكتور أحمد شلتوت
+                        <a href="#">01095696841</a>
+                    </li>
+                    <li>دكتورة خلود
+                        <a href="#">01069563891</a>
+                    </li>
+                    <li>دكنورة هناء ماهر
+                        <a href="#">01017670900</a>
+                    </li>
+                    <li>دكتور اسلام سمير
+                        <a href="#">01095479417</a>
+                    </li>
+                </ol>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>تحاليل</b></li>
+                    </ul>
+                    <li>دكتور احمد رزق كلوب
+                        <a href="#">01270055254</a> --
+                        <a href="#">01003371904</a>
+                    </li>
+                    <li>دكتور ياسمين ابو المجد
+                        <a href="#">01149487925</a>
+                    </li>
+                    <li>معمل تبارك دكتور احمد صبحي
+                        <a href="#">1005651144</a>
+                    </li>
+                </ol>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>مستشفيات</b></li>
+                    </ul>
+                    <li>مستشفى دكتور مجدي نصار
+                        <a href="#">01099363994</a>
+                    </li>
+                </ol>
+
+            </details>
+        </section>
+        <section>
+            <details>
+                <summary>صيدليات</summary>
+                <b>هذه الصيدليات داخل نوى فقط **</b>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>صيدليات</b></li>
+                    </ul>
+                    <li>صيدلية دكتور سوزان خطاب
+                        <a href="#">01067327876</a>
+                    </li>
+                    <li>صيدلية دكتور محمد عادل القلماول
+                        <a href="#">01010312550</a>
+                    </li>
+                    <li>صيدلية ابتهال الدهشان
+                        <a href="#">01066941753</a>
+                    </li>
+                    <li>دكتورة دعاء ابراهيم
+                        <a href="#">01003247239</a>
+                    </li>
+                    <li>دكتورة رشا البربري
+                        <a href="#">01099073060</a>
+                    </li>
+
+                </ol>
+
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>عظام</b></li>
+                    </ul>
+                    <li>دكتور محمد عبد ال ظاهر عظام
+                        <a href="#">01003518483</a>
+                    </li>
+                </ol>
+            </details>
+        </section>
+        <section>
+            <details>
+                <summary>مطاعم - محلات - بيتزا - كشري - كريب - .....</summary>
+                <b>هذه المطاعم داخل نوى فقط **</b>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>كريبات</b></li>
+                    </ul>
+                    <li>كريب اسلام نصار
+                        <a href="#">01064625365</a>
+                    </li>
+                    <li>كريب هيرو
+                        <a href="#">01061671518</a>
+                    </li>
+                    <li>كريب افندينا
+                        <a href="#">01003163875</a>
+                    </li>
+                </ol>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>بيتزا</b></li>
+                    </ul>
+                    <li>بيتزا الدنياري
+                        <a href="#">01148138005</a>
+                    </li>
+                    <li>بيتزا حكاية - اول طريق طنان بجوار كافيتيريا الكرداسي
+                        <a href="#">01277010379</a> --
+                        <a href="#">01013402208</a>
+                    </li>
+                </ol>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>كشري</b></li>
+                    </ul>
+                    <li>كشري حمادة افندي
+                        <a href="#">01070090872</a>
+                    </li>
+                    <li>كشري المجنون
+                        <a href="#">01020669574</a>
+                    </li>
+                </ol>
+            </details>
+        </section>
+        <section>
+            <details>
+                <summary>حلويات</summary>
+                <b>هذه المحلات داخل نوى فقط **</b>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>حلويات</b></li>
+                    </ul>
+                    <li>الدنياري
+                        <a href="#">01148138005</a>
+                    </li>
+                </ol>
+            </details>
+        </section>
+
+
+
+        <section>
+            <details>
+                <summary>مصورين (افراح - سيشن - خروجة - ...)</summary>
+                <b>هؤلاء المصورين من داخل نوى فقط **</b>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>مصورين</b></li>
+                    </ul>
+                    <li>اشرف احمد سعد
+                        <a href="#">01016037608</a>
+                    </li>
+                    <li>حسن عادل
+                        <a href="#">01017831970</a>
+                    </li>
+                    <li> </li>
+                </ol>
+            </details>
+        </section>
+        <section>
+            <details>
+                <summary>ميكانيكي</summary>
+                <b>هذه العيادات داخل نوى فقط **</b>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>ميكانيكي</b></li>
+                    </ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ol>
+            </details>
+        </section>
+        <section>
+            <details>
+                <summary>صيانة</summary>
+                <b>هذه الصيانة داخل نوى فقط **</b>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>صيانة موبايلات</b></li>
+                    </ul>
+                    <li>محمد مجدي خطاب و ماجد مجدي خطاب
+                        <a href="#">01099323020</a> -- 
+                        <a href="#">01097530514</a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ol>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>صيانة اجهزة الكمبيوتر</b></li>
+                    </ul>
+                    <li>محمود البركه
+                        <a href="#">01060303113</a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ol>
+            </details>
+        </section>
+        <section>
+            <details>
+                <summary>صيانة</summary>
+                <b>هذه الصيانة داخل نوى فقط **</b>
+                <hr><br>
+                <ol>
+                    <ul>
+                        <li><b>صيانة</b></li>
+                    </ul>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ol>
+            </details>
+        </section>
+    </article>
+
+    <script>
+        function normalizeText(text) {
+            return text.normalize('NFKC').replace(/[\u064B-\u0652]/g, '');
+        }
+
+        function searchItems(event) {
+            event.preventDefault();
+
+            // Clear previous highlights
+            document.querySelectorAll('.highlight').forEach(el => el.classList.remove('highlight'));
+
+            // Close all details
+            document.querySelectorAll('details').forEach(detail => {
+                detail.removeAttribute('open');
+            });
+
+            const searchTerm = normalizeText(document.getElementById('search').value.trim());
+            if (!searchTerm) return;
+
+            let found = false;
+
+            document.querySelectorAll('details').forEach(detail => {
+                const items = detail.querySelectorAll('li, ol li');
+                items.forEach(item => {
+                    const itemText = normalizeText(item.textContent);
+                    if (itemText.includes(searchTerm)) {
+                        detail.setAttribute('open', 'open');
+                        item.classList.add('highlight');
+                        setTimeout(() => {
+                            item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 100);
+                        found = true;
+                    }
+                });
+            });
+
+            if (!found) {
+                alert('لا توجد عناصر مطابقة.');
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // الحصول على العدد الحالي من التخزين المحلي
+            let count = localStorage.getItem('visitorCount');
+
+            // إذا كان العدد غير موجود في التخزين المحلي، قم بتعيينه إلى 0
+            if (!count) {
+                count = 0;
+            }
+
+            // زيادة العدد بمقدار 1
+            count = parseInt(count) + 1;
+
+            // حفظ العدد الجديد في التخزين المحلي
+            localStorage.setItem('visitorCount', count);
+
+            // عرض العدد على الصفحة
+            document.getElementById('visitor-count').innerText = 'عدد زياراتك لهذا الموقع: ' + count;
+        });
+    </script>
+</body>
+
+</html>

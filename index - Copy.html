@@ -1,0 +1,37 @@
+<?php
+// اسم ملف التخزين
+$counterFile = 'counter.txt';
+
+// التحقق مما إذا كان الملف موجودًا وقابلًا للقراءة والكتابة
+if (file_exists($counterFile) && is_readable($counterFile) && is_writable($counterFile)) {
+    // قراءة العدد الحالي
+    $count = (int) file_get_contents($counterFile);
+
+    // زيادة العدد بمقدار 1
+    $count++;
+
+    // كتابة العدد الجديد في الملف
+    file_put_contents($counterFile, $count);
+} else {
+    // في حالة عدم وجود الملف، تعيين العدد إلى 1 وإنشاء الملف
+    $count = 1;
+    file_put_contents($counterFile, $count);
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Counter</title>
+</head>
+
+<body>
+    <p id="visitor-count">عدد زيارات الموقع:
+        <?php echo $count; ?>
+    </p>
+</body>
+
+</html>
